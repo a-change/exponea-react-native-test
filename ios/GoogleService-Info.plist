@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>908401887129-u6e4673k9pfkcmittsldclhf5idsepo5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.908401887129-u6e4673k9pfkcmittsldclhf5idsepo5</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>908401887129-q6gievr3mjh2goj7soab7kruvsa02sts.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBstJjPJLzZF06pHhApdJJF7CV1HRgCDzs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>908401887129</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.newawesomeproject</string>
+	<key>PROJECT_ID</key>
+	<string>exponea-android-sdk</string>
+	<key>STORAGE_BUCKET</key>
+	<string>exponea-android-sdk.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:908401887129:ios:899fcfd03c1456e5913508</string>
+	<key>DATABASE_URL</key>
+	<string>https://exponea-android-sdk.firebaseio.com</string>
+</dict>
+</plist>
