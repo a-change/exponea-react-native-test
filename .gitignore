@@ -60,3 +60,9 @@ buck-out/
 
 # Exponea config with the keys
 exponea-config.json
+
+# iOS google thing
+GoogleService-Info.plist
+
+# Android google config
+google-services.json

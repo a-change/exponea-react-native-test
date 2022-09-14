@@ -1,18 +1,20 @@
 package com.newawesomeproject;
 
 import android.app.NotificationManager;
-import android.content.Context;  
-import androidx.annotation.NonNull;  
-import com.exponea.ExponeaModule;  
-import com.google.firebase.messaging.FirebaseMessagingService;  
-import com.google.firebase.messaging.RemoteMessage;  
-  
+import android.content.Context;
+
+import androidx.annotation.NonNull;
+
+import com.exponea.ExponeaModule;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
+
 public class MyFirebaseMessagingService extends FirebaseMessagingService {  
   
       @Override  
       public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {  
-            super.onMessageReceived(remoteMessage);  
-            ExponeaModule.Companion.handleRemoteMessage(  
+            super.onMessageReceived(remoteMessage);
+            ExponeaModule.Companion.handleRemoteMessage(
                     getApplicationContext(),  
                     remoteMessage.getData(),  
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)

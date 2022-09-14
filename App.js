@@ -8,6 +8,7 @@
 
 import React from 'react';
 import exponeaConfig from './exponea-config.json';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import type {Node} from 'react';
 import {
@@ -37,6 +38,7 @@ async function configureExponea(configuration) {
   Exponea.setLogLevel(LogLevel.VERBOSE);
   console.log(configuration);
   try {
+    // Exponea.checkPushSetup();
     if (!(await Exponea.isConfigured())) {
       console.log('Configuring Exponea');
       await Exponea.configure(configuration).catch(error => console.log(error));
@@ -48,6 +50,24 @@ async function configureExponea(configuration) {
     console.error(error);
     throw error;
   }
+  await Exponea.identifyCustomer(
+    {
+      registered: 'nikolay.semyonov@exponea.com',
+    },
+    {},
+  );
+  setSilentPushListener();
+}
+function setSilentPushListener() {
+  console.log({message: 'Exponea silent push configured'});
+  AsyncStorage.getItem('showBirthday').then(item => {
+    console.log({item});
+  });
+  Exponea.setPushReceivedListener(data => {
+    console.log({data});
+    AsyncStorage.setItem('showBirthday', JSON.stringify(data));
+    console.log('im here');
+  });
 }
 
 const Section = ({children, title}): Node => {
@@ -82,8 +102,7 @@ const App: () => Node = () => {
   console.log('is Exponea configured at start: ', isConfigured);
   configureExponea({
     projectToken: exponeaConfig.projectToken,
-    authorizationToken:
-      exponeaConfig.authorizationToken,
+    authorizationToken: exponeaConfig.authorizationToken,
     // default baseUrl value is https://api.exponea.com
     baseUrl: exponeaConfig.baseUrl,
     httpLoggingLevel: 'BODY',
